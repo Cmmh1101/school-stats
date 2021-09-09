@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --overlay: #f0ffffe8;
+  --dark-color: #1b1b1b;
+  --white: #f5f5f6;
+  --blue: #3b79ec;
+  --transition: all 0.3s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  color: var(--dark-color);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  text-align: center;
+}
