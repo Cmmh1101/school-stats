@@ -1,16 +1,19 @@
 # Proyect technologies:
 
-    - ReactJS project 
-    - NodeJS
-    - MongoDB
+- ReactJS project 
+- ChartJs 
+ -- react-chartjs-2
+- NodeJS
+- MongoDB
+    
    
-# Created by: 
-    - Carla Montano 
+## Created by: 
+- Carla Montano 
     
-# Contact me via: 
+## Contact me via: 
 
-    - LinkedIn: https://www.linkedin.com/in/carla-montano/ 
+- LinkedIn: https://www.linkedin.com/in/carla-montano/ 
     
-# Run with:
+## Run with:
 
-    - Yarn install
+- Yarn install
