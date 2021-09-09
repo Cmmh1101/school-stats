@@ -8,7 +8,9 @@
   --overlay: #f0ffffe8;
   --dark-color: #1b1b1b;
   --white: #f5f5f6;
-  --blue: #3b79ec;
+  --principal: #a2d45e;
+  --second: #f68d2e;
+  --second-opaque: #cc6912;
   --transition: all 0.3s ease-in-out;
 }
 
@@ -21,11 +23,30 @@ h6,
 p,
 a,
 span {
-  color: var(--dark-color);
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.5px;
 }
 
 h1 {
   text-align: center;
+}
+
+a {
+  color: var(--white);
+}
+
+.cta {
+  color: var(--white);
+  background-color: var(--second);
+  text-transform: uppercase;
+  padding: 11px 20px;
+  border-radius: 30px;
+  margin-top: 2rem;
+  transition: var(--transition);
+}
+.cta:hover {
+  color: var(--white);
+  background-color: var(--second-opaque);
+  text-decoration: none;
+  transform: translateY(-5px);
 }
