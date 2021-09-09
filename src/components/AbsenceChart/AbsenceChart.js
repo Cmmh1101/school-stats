@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+// import { csv } from "d3";
+import * as d3 from "d3";
+import data from "../../data.csv";
 
 const AbsenceChart = () => {
+  // useEffect(() => {
+  //   csv("data.csv").then((data) => {
+  //     console.log(data);
+  //   });
+
+  // }, []);
+
+  d3.csv(data)
+    .then(function (data) {
+      console.log(data);
+    })
+    .catch(function (err) {
+      throw err;
+    });
+
+  // d3.csv(data, function (data) {
+  //   console.log(data);
+  // });
+
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h1>How students abcenses impact their performance at school?</h1>
+            <h1>How students absences impact their performance at school?</h1>
           </div>
           <div className="col-8 mx-auto">
             <Bar
@@ -36,10 +58,28 @@ const AbsenceChart = () => {
                     ],
                     borderWidth: 1,
                   },
+                  {
+                    label: "Quantity",
+                    data: [100, 104, 67, 508, 200, 400],
+                    backgroundColor: "orange",
+                    borderColor: "red",
+                  },
                 ],
               }}
               height={400}
               width={600}
+              options={{
+                maintainAspecRatio: false,
+                scales: {
+                  yAxes: [
+                    {
+                      ticks: {
+                        beginAtZero: true,
+                      },
+                    },
+                  ],
+                },
+              }}
             />
           </div>
         </div>
