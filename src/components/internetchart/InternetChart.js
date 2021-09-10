@@ -23,14 +23,14 @@ const InternetChart = () => {
 
   return (
     <>
-      <section className="stats_area">
+      <section className="stats_area" id="internet">
         <div className="container">
-          <div className="row">
+          <div className="row chart_area">
             <div className="col-12">
-              <h1>
+              <h2>
                 How <span className="span_bold">students Internet access</span>{" "}
                 impact their academic performance?
-              </h1>
+              </h2>
             </div>
             <div className="col-8 card shadow mx-auto">
               <Bar

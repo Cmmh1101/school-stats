@@ -95,12 +95,12 @@ const HealthChart = () => {
     <>
       <section className="stats_area">
         <div className="container">
-          <div className="row">
+          <div className="row chart_area">
             <div className="col-12">
-              <h1>
+              <h2>
                 How <span className="span_bold">student's overall health</span>{" "}
                 impacts their academic performance?
-              </h1>
+              </h2>
             </div>
             <div className="col-8 card shadow mx-auto">
               <Bar

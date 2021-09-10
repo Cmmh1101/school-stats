@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./components/navigation/navigation.css";
 import "./components/hero/hero.css";
+import "./components/statsOptions/statsOptions.css";
 import "./components/internetchart/internetChart.css";
 import "./components/healthchart/healthChart.css";
 import "./components/traveltime/travelTime.css";
 import Home from "./Pages/HomePage";
+import StatsList from "./components/statsOptions/StatsList";
+import Navigation from "./components/navigation/Navigation.js";
+import HealthChart from "./components/healthchart/HealthChart";
+import InternetChart from "./components/internetchart/InternetChart";
+import TravelTimeChart from "./components/traveltime/TravelTime";
 import {
   BrowserRouter as Router,
   Route,
@@ -20,16 +27,22 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Home />
-          {/* <Navigation /> */}
+          <Navigation />
           <TransitionGroup>
             <CSSTransition classNames="page" timeout={300}>
               <Switch>
-                {/* <Route path="/" component={} exact />
-                <Route path="/about" component={} exact />
-                
-                <Route component={} />
-                <Redirect to="/" /> */}
+                <Route path="/" component={Home} exact />
+
+                <Route path="/statslist" component={StatsList} exact />
+                <Route path="/internetchart" component={InternetChart} exact />
+                <Route path="/healthchart" component={HealthChart} exact />
+                <Route
+                  path="/traveltimechart"
+                  component={TravelTimeChart}
+                  exact
+                />
+                {/* <Route component={} /> */}
+                <Redirect to="/" />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

@@ -10,10 +10,10 @@ const Hero = () => {
             <div className="col hero_text">
               <h1 className="text_gradient">School Stats</h1>
               <p>
-                Ready to find out how students life's conditions impact their
+                Ready to find out how students life conditions impact their
                 school performance?
               </p>
-              <Link className="cta" to="/">
+              <Link className="cta" to="/statslist">
                 Check Our Stats
               </Link>
             </div>

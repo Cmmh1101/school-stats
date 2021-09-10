@@ -64,6 +64,31 @@ a {
   transform: translateY(-5px);
 }
 
+.stats_area {
+  height: auto;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(67, 213, 226);
+  background: linear-gradient(
+    165deg,
+    rgba(67, 213, 226, 1) 29%,
+    rgba(162, 212, 94, 1) 82%
+  );
+}
+
 .span_bold {
   font-weight: 700;
+}
+
+.chart_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chart_area h2 {
+  margin-bottom: 5rem;
+  text-align: center;
 }
