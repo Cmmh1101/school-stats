@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="container hero">
           <div className="row hero_text_area">
             <div className="col hero_text">
-              <h1>School Stats</h1>
+              <h1 className="text_gradient">School Stats</h1>
               <p>
                 Ready to find out how students life's conditions impact their
                 school performance?

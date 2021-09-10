@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import "./components/hero/hero.css";
-import "./components/AbsenceChart/absenceChart.css";
+import "./components/internetchart/internetChart.css";
+import "./components/healthchart/healthChart.css";
+import "./components/traveltime/travelTime.css";
 import Home from "./Pages/HomePage";
 import {
   BrowserRouter as Router,

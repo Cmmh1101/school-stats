@@ -1,12 +1,16 @@
 import React from "react";
-import AbsenceChart from "../components/AbsenceChart/AbsenceChart";
+import InternetChart from "../components/internetchart/InternetChart";
 import Hero from "../components/hero/Hero";
+import HealthChart from "../components/healthchart/HealthChart";
+import TravelTimeChart from "../components/traveltime/TravelTime";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <AbsenceChart />
+      <InternetChart />
+      <HealthChart />
+      <TravelTimeChart />
     </>
   );
 };
