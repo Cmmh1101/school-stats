@@ -1,45 +1,91 @@
 import React, { useState, useEffect } from "react";
-import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
-// import { csv } from "d3";
-import * as d3 from "d3";
-import data from "../../data.csv";
+
+const data = require("../../data.json");
 
 const AbsenceChart = () => {
-  // useEffect(() => {
-  //   csv("data.csv").then((data) => {
-  //     console.log(data);
+  // state
+  // const [chartData, setChartData] = useState({});
+
+  // const chart = () => {
+  //   setChartData({
+  //     labels: finals,
+  //     datasets: [
+  //       {
+  //         label: "internet",
+  //         data: interYes,
+  //         backgroundColor: ["rgba(75, 192, 192, 0.6)"],
+  //       },
+  //     ],
   //   });
+  // };
 
+  // useEffect(() => {
+  //   chart();
   // }, []);
+  // ///////////////////////////////////
 
-  d3.csv(data)
-    .then(function (data) {
-      console.log(data);
-    })
-    .catch(function (err) {
-      throw err;
-    });
+  var totalYes = 0;
+  var totalNo = 0;
+  var notaFinalYes = 0;
+  var notaFinalNo = 0;
 
-  // d3.csv(data, function (data) {
-  //   console.log(data);
-  // });
+  data.forEach((student) => {
+    if (student.internet === "yes") {
+      totalYes++;
+      notaFinalYes = notaFinalYes + student.G3;
+    } else if (student.internet === "no") {
+      totalNo++;
+      notaFinalNo = notaFinalNo + student.G3;
+    }
+  });
+
+  const interYes = data.map((student) => {
+    if (student.internet === "yes") {
+      //return console.log(student.);
+    }
+  });
+  const interNo = data.map((student) => {
+    if (student.internet === "no") {
+      //return console.log(student.internet);
+    }
+  });
+
+  const finals = data.map((student) => {
+    return student.G3;
+  });
+
+  const summary = [notaFinalYes / totalYes, notaFinalNo / totalNo];
 
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h1>How students absences impact their performance at school?</h1>
+            <h1>How students absences impact their academic performance?</h1>
           </div>
-          <div className="col-8 mx-auto">
+          <div></div>
+          <div>
+            {/* {data.map((student) => {
+              return <h1>{student.age}</h1>;
+            })} */}
+            {/* {data.map((student) => {
+              if (student.age <= 15) {
+                return <h1>{student.age}</h1>;
+              }
+            })} */}
+          </div>
+          {/* <div className="col-8 card shadow mx-auto">
+            <Bar data={chart} />
+          </div> */}
+          <div className="col-8 card shadow mx-auto">
             <Bar
               data={{
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: ["Y", "N"],
                 datasets: [
                   {
-                    label: "# of Votes",
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: "Internet access",
+                    data: summary,
                     backgroundColor: [
                       "rgba(255, 99, 132, 0.2)",
                       "rgba(54, 162, 235, 0.2)",
@@ -58,12 +104,6 @@ const AbsenceChart = () => {
                     ],
                     borderWidth: 1,
                   },
-                  {
-                    label: "Quantity",
-                    data: [100, 104, 67, 508, 200, 400],
-                    backgroundColor: "orange",
-                    borderColor: "red",
-                  },
                 ],
               }}
               height={400}
@@ -72,6 +112,13 @@ const AbsenceChart = () => {
                 maintainAspecRatio: false,
                 scales: {
                   yAxes: [
+                    {
+                      ticks: {
+                        beginAtZero: true,
+                      },
+                    },
+                  ],
+                  xAxes: [
                     {
                       ticks: {
                         beginAtZero: true,
