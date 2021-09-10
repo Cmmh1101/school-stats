@@ -1,0 +1,37 @@
+.options_bg {
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: rgb(67, 213, 226);
+  background: linear-gradient(
+    165deg,
+    rgba(67, 213, 226, 1) 29%,
+    rgba(162, 212, 94, 1) 82%
+  ); */
+}
+
+.stat_link_box {
+  margin: 2rem 0;
+}
+
+.link_stats {
+  color: var(--dark-color);
+  background-color: none;
+}
+.link_stats:hover {
+  color: var(--second);
+}
+
+.link_stats h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.imagen_chart {
+  width: 100%;
+}
+.imagen_chart img {
+  width: 100%;
+}
