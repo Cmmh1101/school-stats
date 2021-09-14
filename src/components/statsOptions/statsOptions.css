@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 5rem;
   /* background: rgb(67, 213, 226);
   background: linear-gradient(
     165deg,
@@ -19,9 +20,15 @@
 .link_stats {
   color: var(--dark-color);
   background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: var(--transition);
 }
 .link_stats:hover {
   color: var(--second);
+  text-decoration: none;
 }
 
 .link_stats h3 {
@@ -30,7 +37,7 @@
 }
 
 .imagen_chart {
-  width: 100%;
+  width: 60%;
 }
 .imagen_chart img {
   width: 100%;

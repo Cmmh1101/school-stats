@@ -6,12 +6,14 @@ import "./components/statsOptions/statsOptions.css";
 import "./components/internetchart/internetChart.css";
 import "./components/healthchart/healthChart.css";
 import "./components/traveltime/travelTime.css";
+import "./components/loading/loading.css";
 import Home from "./Pages/HomePage";
 import StatsList from "./components/statsOptions/StatsList";
 import Navigation from "./components/navigation/Navigation.js";
 import HealthChart from "./components/healthchart/HealthChart";
 import InternetChart from "./components/internetchart/InternetChart";
 import TravelTimeChart from "./components/traveltime/TravelTime";
+import AllHealthChart from "./components/healthchart/AllHealthChart";
 import {
   BrowserRouter as Router,
   Route,
@@ -36,6 +38,11 @@ class App extends Component {
                 <Route path="/statslist" component={StatsList} exact />
                 <Route path="/internetchart" component={InternetChart} exact />
                 <Route path="/healthchart" component={HealthChart} exact />
+                <Route
+                  path="/allhealthchart"
+                  component={AllHealthChart}
+                  exact
+                />
                 <Route
                   path="/traveltimechart"
                   component={TravelTimeChart}

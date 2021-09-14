@@ -71,11 +71,13 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(67, 213, 226);
+  background: rgb(255, 255, 255);
   background: linear-gradient(
     165deg,
-    rgba(67, 213, 226, 1) 29%,
-    rgba(162, 212, 94, 1) 82%
+    rgba(255, 255, 255, 1) 35%,
+    rgba(225, 248, 250, 1) 44%,
+    rgba(67, 213, 226, 1) 66%,
+    rgba(162, 212, 94, 1) 85%
   );
 }
 
@@ -91,4 +93,8 @@ a {
 .chart_area h2 {
   margin-bottom: 5rem;
   text-align: center;
+}
+
+.base_chart {
+  padding: 1rem;
 }

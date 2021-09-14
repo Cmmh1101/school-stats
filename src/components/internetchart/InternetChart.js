@@ -1,26 +1,50 @@
 import React, { useState, useEffect } from "react";
-import { Bar } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
+import Loading from "../loading/Loading";
 
-const data = require("../../data.json");
+// const data = require("../../data.json");
 
 const InternetChart = () => {
-  var totalYes = 0;
-  var totalNo = 0;
-  var finalGradeYes = 0;
-  var finalGradeNo = 0;
+  const [loading, setLoading] = useState(true);
+  const [values, setValues] = useState([]);
+  const [labels, setLabels] = useState([]);
 
-  data.forEach((student) => {
-    if (student.internet === "yes") {
-      totalYes++;
-      finalGradeYes = finalGradeYes + student.G3;
-    } else if (student.internet === "no") {
-      totalNo++;
-      finalGradeNo = finalGradeNo + student.G3;
-    }
-  });
+  useEffect(() => {
+    // fetch("http://127.0.0.1:8000/internet")
+    //   .then((res) => res.json())
+    //   .then(
+    //     (result) => {
+    //       console.log("GOT IT", result);
+    //       setLabels(result.labels);
+    //       setValues(result.values);
+    //       // setLoading(false);
+    //     },
+    //     (error) => {
+    //       console.log("error", error);
+    //     }
+    //   );
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
 
-  const summary = [finalGradeYes / totalYes, finalGradeNo / totalNo];
+  // data.forEach((student) => {
+  //   if (student.internet === "yes") {
+  //     totalYes++;
+  //     finalGradeYes = finalGradeYes + student.G3;
+  //   } else if (student.internet === "no") {
+  //     totalNo++;
+  //     finalGradeNo = finalGradeNo + student.G3;
+  //   }
+  // });
 
+  // const summary = [finalGradeYes / totalYes, finalGradeNo / totalNo];
+
+  if (loading) {
+    return <Loading />;
+  }
+  console.log(values);
+  console.log(labels);
   return (
     <>
       <section className="stats_area" id="internet">
@@ -32,29 +56,22 @@ const InternetChart = () => {
                 impact their academic performance?
               </h2>
             </div>
-            <div className="col-8 card shadow mx-auto">
-              <Bar
+            <div className="col-md-8 card shadow mx-auto">
+              <Pie
+                className="base_chart"
                 data={{
-                  labels: ["Y", "N"],
+                  // labels: labels,
                   datasets: [
                     {
                       label: "Internet access",
-                      data: summary,
+                      // data: values,
                       backgroundColor: [
-                        "rgba(255, 99, 132, 0.2)",
-                        "rgba(54, 162, 235, 0.2)",
-                        "rgba(255, 206, 86, 0.2)",
-                        "rgba(75, 192, 192, 0.2)",
-                        "rgba(153, 102, 255, 0.2)",
-                        "rgba(255, 159, 64, 0.2)",
+                        "rgba(255, 99, 132, 0.8)",
+                        "rgba(54, 162, 235, 0.8)",
                       ],
                       borderColor: [
                         "rgba(255, 99, 132, 1)",
                         "rgba(54, 162, 235, 1)",
-                        "rgba(255, 206, 86, 1)",
-                        "rgba(75, 192, 192, 1)",
-                        "rgba(153, 102, 255, 1)",
-                        "rgba(255, 159, 64, 1)",
                       ],
                       borderWidth: 1,
                     },
