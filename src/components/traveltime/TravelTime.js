@@ -28,25 +28,11 @@ const TravelTimeChart = () => {
   //   }, 2000);
   // }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
   // console.log(values);
   // console.log(labels);
-
-  // Front end data calculations
-  // var lessThanFifteen = 0;
-  // var lessThanThirty = 0;
-  // var lessThanHour = 0;
-  // var moreThanHour = 0;
-
-  //
-  // var finalGradeLessThanFifteen = 0;
-  // var finalGradeLessThanThirty = 0;
-  // var finalGradeLessThanHour = 0;
-  // var finalGradeMoreThanHour = 0;
-
-  //   G1 grade
 
   // data.forEach((student) => {
   //   if (student.traveltime === 1) {
@@ -63,19 +49,6 @@ const TravelTimeChart = () => {
   //     finalGradeMoreThanHour = finalGradeMoreThanHour + student.G3;
   //   }
   // });
-
-  //   console.log(lessThanFifteen, finalGradeLessThanFifteen / lessThanFifteen);
-  //   console.log(lessThanThirty, finalGradeLessThanThirty / lessThanThirty);
-  //   console.log(lessThanHour, finalGradeLessThanHour / lessThanHour);
-
-  //   console.log(moreThanHour, finalGradeMoreThanHour / moreThanHour);
-
-  // const summaryFinal = [
-  //   finalGradeLessThanFifteen / lessThanFifteen,
-  //   finalGradeLessThanThirty / lessThanThirty,
-  //   finalGradeLessThanHour / lessThanHour,
-  //   finalGradeMoreThanHour / moreThanHour,
-  // ];
 
   return (
     <>
@@ -138,6 +111,24 @@ const TravelTimeChart = () => {
                   },
                 }}
               />
+              <div className="leyend">
+                <p>
+                  <i className="fa fa-dot-circle-o" aria-hidden="true" />{" "}
+                  <em>1 = less than 15 min</em>
+                </p>
+                <p>
+                  <i className="fa fa-dot-circle-o" aria-hidden="true" />{" "}
+                  <em>2 = 15 min to 30 min</em>
+                </p>
+                <p>
+                  <i className="fa fa-dot-circle-o" aria-hidden="true" />{" "}
+                  <em>3 = 30 min to 1 hr</em>
+                </p>
+                <p>
+                  <i className="fa fa-dot-circle-o" aria-hidden="true" />{" "}
+                  <em>4 = More than 1 hr</em>
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -67,7 +67,6 @@ a {
 .stats_area {
   height: auto;
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,6 +92,22 @@ a {
 .chart_area h2 {
   margin-bottom: 5rem;
   text-align: center;
+}
+
+.chart_card {
+  position: relative;
+}
+
+.leyend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+}
+.leyend p {
+  font-size: 0.8rem;
+  color: #858686;
+  padding: 0 10px;
 }
 
 .base_chart {
