@@ -21,11 +21,11 @@ const HealthChart = () => {
     //       console.log("GOT IT", result);
     //       setLabels(result.labels);
     //       setValues(result.values);
-    //       setLabels2(result.labels2);
+    //       // setLabels2(result.labels2);
     //       setValues2(result.values2);
-    //       setLabels3(result.labels3);
+    //       // setLabels3(result.labels3);
     //       setValues3(result.values3);
-    //       // setLoading(false);
+    //       setLoading(false);
     //     },
     //     (error) => {
     //       console.log("error", error);
@@ -58,7 +58,7 @@ const HealthChart = () => {
               <Bar
                 className="base_chart"
                 data={{
-                  // labels: labels,
+                  labels: labels,
                   datasets: [
                     {
                       label: "G1 / Health",
@@ -79,44 +79,45 @@ const HealthChart = () => {
                       ],
                       borderWidth: 1,
                     },
-                    // {
-                    //   label: "G2 / Health",
-                    //   data: values2,
-                    //   backgroundColor: [
-                    //     "rgba(54, 90, 235, 0.2)",
-                    //     "rgba(255, 60, 132, 0.2)",
-                    //     "rgba(255, 150, 86, 0.2)",
-                    //     "rgba(75, 230, 192, 0.2)",
-                    //     "rgba(153, 50, 255, 0.2)",
-                    //   ],
-                    //   borderColor: [
-                    //     "rgba(255, 60, 132, 1)",
-                    //     "rgba(54, 90, 235, 1)",
-                    //     "rgba(255, 150, 86, 1)",
-                    //     "rgba(75, 230, 192, 1)",
-                    //     "rgba(153, 50, 255, 1)",
-                    //   ],
-                    //   borderWidth: 1,
-                    // },
-                    // {
-                    //   label: "Final / Health",
-                    //   data: values3,
-                    //   backgroundColor: [
-                    //     "rgba(230, 99, 132, 0.2)",
-                    //     "rgba(154, 162, 235, 0.2)",
-                    //     "rgba(240, 206, 86, 0.2)",
-                    //     "rgba(175, 192, 192, 0.2)",
-                    //     "rgba(113, 102, 255, 0.2)",
-                    //   ],
-                    //   borderColor: [
-                    //     "rgba(230, 99, 132, 1)",
-                    //     "rgba(154, 162, 235, 1)",
-                    //     "rgba(240, 206, 86, 1)",
-                    //     "rgba(175, 192, 192, 1)",
-                    //     "rgba(113, 102, 255, 1)",
-                    //   ],
-                    //   borderWidth: 1,
-                    // },
+                    {
+                      label: "G2 / Health",
+                      // data: values2,
+                      backgroundColor: [
+                        "rgba(200, 50, 115, 0.8)",
+                        "rgba(54, 90, 235, 0.8)",
+                        "rgba(255, 150, 86, 0.8)",
+                        "rgba(75, 230, 192, 0.8)",
+                        "rgba(153, 50, 255, 0.8)",
+                      ],
+                      borderColor: [
+                        "rgba(200, 50, 115, 1)",
+                        "rgba(54, 90, 255, 1)",
+
+                        "rgba(255, 150, 86, 1)",
+                        "rgba(75, 230, 192, 1)",
+                        "rgba(153, 50, 255, 1)",
+                      ],
+                      borderWidth: 1,
+                    },
+                    {
+                      label: "Final / Health",
+                      // data: values3,
+                      backgroundColor: [
+                        "rgba(230, 13, 132, 0.8)",
+                        "rgba(74, 90, 255, 0.8)",
+                        "rgba(240, 206, 86, 0.8)",
+                        "rgba(20, 192, 192, 0.8)",
+                        "rgba(113, 102, 255, 0.8)",
+                      ],
+                      borderColor: [
+                        "rgba(230, 13, 132, 1)",
+                        "rgba(154, 162, 235, 1)",
+                        "rgba(240, 206, 86, 1)",
+                        "rgba(20, 192, 192, 1)",
+                        "rgba(113, 102, 255, 1)",
+                      ],
+                      borderWidth: 1,
+                    },
                   ],
                 }}
                 height={400}

@@ -14,6 +14,7 @@ import HealthChart from "./components/healthchart/HealthChart";
 import InternetChart from "./components/internetchart/InternetChart";
 import TravelTimeChart from "./components/traveltime/TravelTime";
 import AllHealthChart from "./components/healthchart/AllHealthChart";
+import FamSchoolSupChart from "./components/famSchoolSup/FamSchoolSupChart";
 import {
   BrowserRouter as Router,
   Route,
@@ -46,6 +47,11 @@ class App extends Component {
                 <Route
                   path="/traveltimechart"
                   component={TravelTimeChart}
+                  exact
+                />
+                <Route
+                  path="/famschoolsupchart"
+                  component={FamSchoolSupChart}
                   exact
                 />
                 {/* <Route component={} /> */}

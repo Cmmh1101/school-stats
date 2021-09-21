@@ -23,7 +23,7 @@ const Navigation = (props) => {
       <Navbar className="nav" expand="md" dark>
         <div className="container p-0">
           <NavbarBrand href="/" className="logo-container">
-            <img src="../images/logobrand.png" alt="logo" />
+            <img src="../images/logo_gmt_green.svg" alt="logo" />
           </NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
@@ -51,6 +51,11 @@ const Navigation = (props) => {
                   <DropdownItem>
                     <NavLink to="/traveltimechart" onClick={toggle}>
                       Travel Time
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink to="/famschoolsupchart" onClick={toggle}>
+                      Support
                     </NavLink>
                   </DropdownItem>
                 </DropdownMenu>

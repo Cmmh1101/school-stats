@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Internet Access",
+    "icon": "fa fa-wifi",
+    "image": "../../images/internet.png",
+    "url": "/internetchart"
+  },
+  {
+    "title": "Health Conditions",
+    "icon": "fa fa-user-md",
+    "image": "../../images/allhealth.png",
+    "url": "/healthchart"
+  },
+  {
+    "title": "Travel Time",
+    "icon": "fa fa-car",
+    "image": "../../images/traveltime.png",
+    "url": "/traveltimechart"
+  },
+  {
+    "title": "Support",
+    "icon": "fa fa-life-ring",
+    "image": "../../images/health.png",
+    "url": "/famschoolsupchart"
+  }
+]
