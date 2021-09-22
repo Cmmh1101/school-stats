@@ -12,27 +12,27 @@ const FamSchoolSupChart = () => {
   const [labelsSchoolSup, setLabelsSchoolSup] = useState([]);
   const [valuesSchoolSup, setValuesSchoolSup] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://127.0.0.1:8000/famschoolsup")
-  //     .then((res) => res.json())
-  //     .then(
-  //       (result) => {
-  //         console.log("GOT IT", result);
-  //         setLabelsFamSup(result.labelsFamSup);
-  //         setValuesFamSup(result.valuesFamSup);
-  //         setLabelsSchoolSup(result.labelsSchoolSup);
-  //         setValuesSchoolSup(result.valuesSchoolSup);
-  //         setLoading(false);
-  //       },
-  //       (error) => {
-  //         console.log("error", error);
-  //       }
-  //     );
-  // }, []);
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/famschoolsup")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log("GOT IT", result);
+          setLabelsFamSup(result.labelsFamSup);
+          setValuesFamSup(result.valuesFamSup);
+          setLabelsSchoolSup(result.labelsSchoolSup);
+          setValuesSchoolSup(result.valuesSchoolSup);
+          setLoading(false);
+        },
+        (error) => {
+          console.log("error", error);
+        }
+      );
+  }, []);
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
   // console.log(valuesFamSup);
   // console.log(labelsFamSup);
   // console.log(valuesSchoolSup);
@@ -54,11 +54,11 @@ const FamSchoolSupChart = () => {
               <Bar
                 className="base_chart"
                 data={{
-                  // labels: labelsFamSup,
+                  labels: labelsFamSup,
                   datasets: [
                     {
                       label: "Final / FamSuport",
-                      // data: valuesFamSup,
+                      data: valuesFamSup,
                       backgroundColor: [
                         "rgba(255, 99, 132, 0.8)",
                         "rgba(54, 162, 235, 0.8)",
@@ -71,7 +71,7 @@ const FamSchoolSupChart = () => {
                     },
                     {
                       label: "Final / SchoolSupport",
-                      // data: valuesSchoolSup,
+                      data: valuesSchoolSup,
                       backgroundColor: [
                         "rgba(255, 99, 132, 0.8)",
                         "rgba(54, 162, 235, 0.8)",

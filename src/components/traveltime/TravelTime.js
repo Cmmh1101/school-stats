@@ -9,28 +9,25 @@ const TravelTimeChart = () => {
   const [values, setValues] = useState([]);
   const [labels, setLabels] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://127.0.0.1:8000/traveltime")
-  //     .then((res) => res.json())
-  //     .then(
-  //       (result) => {
-  //         console.log("GOT IT", result);
-  //         setLabels(result.labels);
-  //         setValues(result.values);
-  //         // setLoading(false);
-  //       },
-  //       (error) => {
-  //         console.log("error", error);
-  //       }
-  //     );
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // }, []);
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/traveltime")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log("GOT IT", result);
+          setLabels(result.labels);
+          setValues(result.values);
+          setLoading(false);
+        },
+        (error) => {
+          console.log("error", error);
+        }
+      );
+  }, []);
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
   // console.log(values);
   // console.log(labels);
 
@@ -66,11 +63,11 @@ const TravelTimeChart = () => {
               <Line
                 className="base_chart"
                 data={{
-                  // labels: labels,
+                  labels: labels,
                   datasets: [
                     {
                       label: "Final / Travel Time",
-                      // data: values,
+                      data: values,
                       backgroundColor: [
                         "rgba(255, 99, 132, 0.8)",
                         "rgba(54, 162, 235, 0.8)",

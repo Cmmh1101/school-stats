@@ -3,29 +3,28 @@ import { Pie } from "react-chartjs-2";
 import Loading from "../loading/Loading";
 
 const InternetChart = () => {
-  // const [loading, setLoading] = useState(true);
-  // const [values, setValues] = useState([]);
-  // const [labels, setLabels] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [values, setValues] = useState([]);
+  const [labels, setLabels] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://127.0.0.1:8000/internet")
-  //     .then((res) => res.json())
-  //     .then(
-  //       (result) => {
-  //         setLabels(result.labels);
-  //         setValues(result.values);
-  //         setLoading(false);
-  //       },
-  //       (error) => {
-  //         console.log("error", error);
-  //       }
-  //     );
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/internet")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setLabels(result.labels);
+          setValues(result.values);
+          setLoading(false);
+        },
+        (error) => {
+          console.log("error", error);
+        }
+      );
+  }, []);
 
-  // }, []);
-
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -42,11 +41,11 @@ const InternetChart = () => {
               <Pie
                 className="base_chart"
                 data={{
-                  // labels: labels,
+                  labels: labels,
                   datasets: [
                     {
                       label: "Internet access",
-                      // data: values,
+                      data: values,
                       backgroundColor: [
                         "rgba(255, 99, 132, 0.8)",
                         "rgba(54, 162, 235, 0.8)",

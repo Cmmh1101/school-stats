@@ -14,28 +14,28 @@ const HealthChart = () => {
   const [labels3, setLabels3] = useState([]);
 
   useEffect(() => {
-    // fetch("http://127.0.0.1:8000/health")
-    //   .then((res) => res.json())
-    //   .then(
-    //     (result) => {
-    //       console.log("GOT IT", result);
-    //       setLabels(result.labels);
-    //       setValues(result.values);
-    //       // setLabels2(result.labels2);
-    //       setValues2(result.values2);
-    //       // setLabels3(result.labels3);
-    //       setValues3(result.values3);
-    //       setLoading(false);
-    //     },
-    //     (error) => {
-    //       console.log("error", error);
-    //     }
-    //   );
+    fetch("http://127.0.0.1:8000/health")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log("GOT IT", result);
+          setLabels(result.labels);
+          setValues(result.values);
+          // setLabels2(result.labels2);
+          setValues2(result.values2);
+          // setLabels3(result.labels3);
+          setValues3(result.values3);
+          setLoading(false);
+        },
+        (error) => {
+          console.log("error", error);
+        }
+      );
   }, []);
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
   // console.log(values);
   // console.log(labels);
   // console.log(values2);
@@ -62,7 +62,7 @@ const HealthChart = () => {
                   datasets: [
                     {
                       label: "G1 / Health",
-                      // data: values,
+                      data: values,
                       backgroundColor: [
                         "rgba(255, 99, 132, 0.8)",
                         "rgba(54, 162, 235, 0.8)",
@@ -81,7 +81,7 @@ const HealthChart = () => {
                     },
                     {
                       label: "G2 / Health",
-                      // data: values2,
+                      data: values2,
                       backgroundColor: [
                         "rgba(200, 50, 115, 0.8)",
                         "rgba(54, 90, 235, 0.8)",
@@ -101,7 +101,7 @@ const HealthChart = () => {
                     },
                     {
                       label: "Final / Health",
-                      // data: values3,
+                      data: values3,
                       backgroundColor: [
                         "rgba(230, 13, 132, 0.8)",
                         "rgba(74, 90, 255, 0.8)",
